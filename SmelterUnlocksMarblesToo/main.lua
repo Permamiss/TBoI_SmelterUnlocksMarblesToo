@@ -29,7 +29,7 @@ function SmelterUnlocksMarblesToo:OnUpdate()
 		if timer ~= 0 then
 			if justGulped then
 				timer = 0
-				playerToGulp:UseActiveItem(CollectibleType.COLLECTIBLE_SMELTER) -- triggers OnItemUsed and allows the Smelter to be used normally
+				playerToGulp:UseActiveItem(CollectibleType.COLLECTIBLE_SMELTER, UseFlag.USE_NOANIM) -- triggers OnItemUsed and allows the Smelter to be used normally
 				justGulped = false
 			end
 		else -- if reached end of timer and still no Gulp! pill usage detected, then consider it traditional Smelter Item usage and use a Gulp pill instead
